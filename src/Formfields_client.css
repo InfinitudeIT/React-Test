@@ -1,0 +1,88 @@
+General App Styles
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* Form Styles */
+.form {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 50%!important;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.form-fields label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-fields input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.qr-code img {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+.builder, .toolbox, .form-area, .drop-area, .field-editor, .form-display, .form-field {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+}
+
+.toolbox {
+  float: left;
+  width: 20%;
+}
+
+.form-area {
+  margin-left: 25%;
+  width: 75%;
+}
+
+.field {
+  background-color: #f4f4f4;
+  cursor: grab;
+  margin-bottom: 5px;
+}
+
+.field-editor {
+  background-color: #eef;
+}
+
+.save-button {
+  margin-top: 20px;
+}

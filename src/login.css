@@ -1,0 +1,92 @@
+.login_main {
+  background-image: url(https://cdn.playfulsparkle.com/images/codepen/oc-gonzalez-xg8z_KhSorQ-unsplash.jpg);
+  background-size: cover;
+  /* padding-block: 3em; */
+  border-image: linear-gradient(hsl(0 0% 100% / 0.2) 20%, hsl(0 0% 100% / 1) 100%) fill 1;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.login_main .login-container {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(128, 128, 128, 0.2);
+  background-color: #fff;
+}
+
+.login_main .login-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login_main .form-control {
+  font-size: 12px;
+  border-color: #E0E2E9;
+  border-radius: 8px;
+  height: 45px;
+}
+
+.login_main .Forgot_txt {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #ff3434;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.login_main .login_btn {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #0A66C2;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  height: 52px;
+}
+.login_main .login_btn:hover {
+  background-color: transparent;
+  border-color: #0A66C2;
+  color: #0A66C2;
+}
+
+.login_main  .or_txt {
+  font-size: 14px;
+  color: #565B6A;
+  text-align: center;
+}
+
+.login_main  .login_googlebtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #565B6A;
+  border: 1px solid #E9E9E9;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+}
+
+.login_main .dont_signuptxt {
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.login_main .dont_signuptxt a {
+  text-decoration: underline;
+  color: #0C0C0C;
+  font-weight: 500;
+}

@@ -1,0 +1,107 @@
+/* LoginComponent.css */
+
+.login-container {
+    width: 500px;
+    height: 750px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+  }
+  
+  @media (max-width: 640px) {
+    .login-container {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .login-container {
+      width: 320px;
+    }
+  }
+  
+  .react-icon {
+    font-size: 48px;
+    color: #000;
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .react-icon:hover {
+    transform: rotate(180deg);
+  }
+  
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-label {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .simple-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .forgot-password {
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #333;
+  }
+  
+  .white-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .white-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .register {
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register:hover {
+    color: #000;
+  }
+  
+  .register-link {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
+  .arrow-icon {
+    margin-top: 2px;
+    font-size: 16px;
+  }
+  

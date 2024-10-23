@@ -1,0 +1,129 @@
+/* Sidebar Styles */
+.sidebar {
+  background: #fff;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 7px 0 60px rgba(0, 0, 0, .05);
+  width: 210px;
+  display: flex;
+  z-index: 11;
+  overflow-y: auto;
+  min-width: 210px;
+  /* position: relative; */
+  flex: 0 0 210px;
+  margin-top: -60px;
+  padding-top: 60px;
+  transition: all .2s;
+}
+
+.sidebar_Inner {
+  padding: 2px 12px;
+  width: 100%;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+.sidebar ul li a, .nav-link {
+  display: block;
+  line-height: normal;
+  height: 36px;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 12px;
+  color: #1C1C1C;
+  white-space: nowrap;
+  transition: all .2s;
+  margin: .1rem 0;
+  display: flex;
+  align-items: center;  
+  font-size: 15px;
+  text-decoration: none;
+}
+.sidebar ul li .icon {
+  width: 18px;
+  height: 18px;
+}
+.sidebar .NoEvnts {
+  font-size: 10px;
+  text-align: center;
+  color: red;
+  margin-bottom: 0;
+}
+.sidebar .Evnt_list {
+  margin-top: 8px;
+  margin-left: 24px;
+  background: #cbdcf9;
+  padding: 8px;
+  border-radius: 4px;
+}
+.sidebar .Evnt_list ul li a {
+  font-size: 14px !important;
+}
+
+.clientName {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu>li {
+  margin-bottom: 15px;
+}
+
+.subMenu {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+
+.nav-link-active {
+  background-color: #CBDCF9;
+  font-weight: bold;
+}
+
+
+
+/* Sidebar Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    /* Full-width on small screens */
+    height: auto;
+    position: fixed;
+    top: 70px;
+    left: 0%;
+    /* Hidden off-screen */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: none;
+  }
+
+  .sidebar.active {
+    transform: translateX(100%);
+    /* Slide in from left when active */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 15px;
+  }
+
+  .clientName {
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}

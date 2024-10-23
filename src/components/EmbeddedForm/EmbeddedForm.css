@@ -1,0 +1,108 @@
+/* Container for the form */
+.embedded-form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Form title */
+  .form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form fields container */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Each form group (label + input) */
+  /* .form-group {
+    margin-bottom: 15px;
+  } */
+  
+  /* Labels for the form fields */
+  /* .form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+  } */
+  
+  /* Input field styling */
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Dropdown (select) styling */
+  .form-dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Checkbox label */
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Checkbox styling */
+  .form-checkbox {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Submit button */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  
+  .submit-btn:focus {
+    outline: none;
+    background-color: #218838;
+  }
+  

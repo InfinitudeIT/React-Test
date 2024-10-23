@@ -1,0 +1,121 @@
+/* General Styles */
+.registration-overview {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.add-new-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-new-btn:hover {
+  background-color: #0056b3;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Tabs and Controls - Fixing in One Line */
+.tabs-controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 20px; */
+  margin-top: 16px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between tabs */
+}
+
+.tab {
+  cursor: pointer;
+  white-space: nowrap; /* Prevents text from wrapping */
+  font-size: 14px;
+}
+
+.tab.active {
+  font-weight: bold;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px; /* Space between control options */
+}
+
+.controls span {
+  cursor: pointer;
+  color: #007bff;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 14px;
+}
+
+/* Table Styles */
+/* .registration-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.registration-table th, .registration-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.registration-table th input {
+  cursor: pointer;
+} */
+
+.view-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.view-btn:hover {
+  color: #0056b3;
+}

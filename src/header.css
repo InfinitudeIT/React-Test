@@ -1,0 +1,263 @@
+/* Header Styles */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .header1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 60px;
+      z-index: 10;
+      transition: all .2s;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+    
+  
+  .dashboardIcon {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .headerRight {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .notificationButton {
+    cursor: pointer;
+  }
+  
+  /* Responsive Header */
+  @media screen and  (min-width:320px)and (max-width:480px)/*mobile device*/ {
+    .header {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px 15px; /* Reduce padding */
+    }
+  
+    .headerRight {
+        margin-top: 10px; /* Add margin to separate from the top part */
+        width: 100%; /* Make headerRight take full width */
+        justify-content: space-between; /* Space out the search and notification button */
+    }
+  
+    .searchInput {
+        width: 100%; /* Full width search input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .notificationButton {
+        font-size: 18px; /* Adjust the icon size for smaller screens */
+    }
+  }
+  
+  @media screen and  (min-width:320px)and (max-width:480px)/*mobile device*/ {
+    .header {
+        padding: 8px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .dashboardIcon {
+        font-size: 16px; /* Reduce icon size for smaller screens */
+    }
+  
+    .searchInput {
+        padding: 5px;
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+  
+    .notificationButton {
+        font-size: 16px;
+    }
+  }
+  
+  /*--*/
+  
+  @media screen  and(min-width:481px)and (max-width:768px)/*mobile device*/  {
+    .header {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px 15px; /* Reduce padding */
+    }
+  
+    .headerRight {
+        margin-top: 10px; /* Add margin to separate from the top part */
+        width: 100%; /* Make headerRight take full width */
+        justify-content: space-between; /* Space out the search and notification button */
+    }
+  
+    .searchInput {
+        width: 100%; /* Full width search input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .notificationButton {
+        font-size: 18px; /* Adjust the icon size for smaller screens */
+    }
+  }
+  
+  @media screen  and(min-width:481px)and (max-width:768px)/*mobile device*/ {
+    .header {
+        padding: 8px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .dashboardIcon {
+        font-size: 16px; /* Reduce icon size for smaller screens */
+    }
+  
+    .searchInput {
+        padding: 5px;
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+  
+    .notificationButton {
+        font-size: 16px;
+    }
+  }
+  
+  /*--*/
+  @media screen  and(min-width:769px)and (max-width:1024px)/*mobile device*/ {
+    .header {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px 15px; /* Reduce padding */
+    }
+  
+    .headerRight {
+        margin-top: 10px; /* Add margin to separate from the top part */
+        width: 100%; /* Make headerRight take full width */
+        justify-content: space-between; /* Space out the search and notification button */
+    }
+  
+    .searchInput {
+        width: 100%; /* Full width search input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .notificationButton {
+        font-size: 18px; /* Adjust the icon size for smaller screens */
+    }
+  }
+  
+  @media screen  and(min-width:769px)and (max-width:1024px)/*mobile device*/ {
+    .header {
+        padding: 8px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .dashboardIcon {
+        font-size: 16px; /* Reduce icon size for smaller screens */
+    }
+  
+    .searchInput {
+        padding: 5px;
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+  
+    .notificationButton {
+        font-size: 16px;
+    }
+  }
+  
+  /*--*/
+  @media screen  and(min-width:1025px)and (max-width:1200px)/*mobile device*/ {
+    .header {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px 15px; /* Reduce padding */
+    }
+  
+    .headerRight {
+        margin-top: 10px; /* Add margin to separate from the top part */
+        width: 100%; /* Make headerRight take full width */
+        justify-content: space-between; /* Space out the search and notification button */
+    }
+  
+    .searchInput {
+        width: 100%; /* Full width search input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .notificationButton {
+        font-size: 18px; /* Adjust the icon size for smaller screens */
+    }
+  }
+  
+  @media screen  and(min-width:1025px)and (max-width:1200px)/*mobile device*/ {
+    .header {
+        padding: 8px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .dashboardIcon {
+        font-size: 16px; /* Reduce icon size for smaller screens */
+    }
+  
+    .searchInput {
+        padding: 5px;
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+  
+    .notificationButton {
+        font-size: 16px;
+    }
+  }
+  
+  /*--*/
+  @media screen  and(min-width:1201)/*mobile device*/ {
+    .header {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px 15px; /* Reduce padding */
+    }
+  
+    .headerRight {
+        margin-top: 10px; /* Add margin to separate from the top part */
+        width: 100%; /* Make headerRight take full width */
+        justify-content: space-between; /* Space out the search and notification button */
+    }
+  
+    .searchInput {
+        width: 100%; /* Full width search input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .notificationButton {
+        font-size: 18px; /* Adjust the icon size for smaller screens */
+    }
+  }
+  
+  @media screen  and(min-width:1201)/*mobile device*/ {
+    .header {
+        padding: 8px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .dashboardIcon {
+        font-size: 16px; /* Reduce icon size for smaller screens */
+    }
+  
+    .searchInput {
+        padding: 5px;
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+  
+    .notificationButton {
+        font-size: 16px;
+    }
+  }
+  
+  

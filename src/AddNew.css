@@ -1,0 +1,75 @@
+.form-builder-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drag_fields .drag_item {
+  width: 100%;
+  margin-bottom: 16px;
+  background: #e2c3fe;
+  border: 0;
+  padding: 6px 4px;
+  /* border-radius: 2px; */
+  font-size: 14px;
+}
+
+.field-button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  margin-left: 50px;
+}
+
+.drag_board {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #eee;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.drag_board .dgbg_title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
+
+.form {
+  text-align: center;
+  width: 250px;
+  background-color: lightgrey;
+  height: 25px;
+}
+
+.field {
+  padding: 10px;
+  background-color: #f4f4f4;
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+.form-button {
+  width: 100%;
+}
+
+.add {
+  text-align: center;
+  background-color: #aaa;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 350px;
+  padding: 10px;
+  margin-left: 50px;
+}

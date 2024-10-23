@@ -1,0 +1,115 @@
+/* RegisterComponent.css */
+
+.register-container {
+    width: 500px;
+    height: 800px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  @media (max-width: 600px) {
+    .register-container {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .register-container {
+      width: 320px;
+    }
+  }
+  
+  .register-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .icon {
+    font-size: 60px;
+    color: #000;
+    transition: all 1s ease;
+  }
+  
+  .icon:hover {
+    transform: rotate(180deg);
+  }
+  
+  .heading {
+    font-size: 24px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .or-text {
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .input-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-section label {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .input-section input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .button {
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .account-text {
+    color: #666;
+    font-size: 16px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .account-text a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .account-text a:hover {
+    text-decoration: underline;
+    color: #333;
+  }
+  
