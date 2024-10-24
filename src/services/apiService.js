@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiBaseUrl = 'http://localhost:8000'; // Load from .env
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000"; // Load from .env
 
 // Generic GET request
 export const getRequest = async (endpoint, params = {}) => {
