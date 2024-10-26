@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000"; // Load from .env
+// process.env.REACT_APP_API_BASE_URL || 
+const apiBaseUrl = "http://localhost:8000"; // Load from .env
 
 // Generic GET request
 export const getRequest = async (endpoint, params = {}) => {
@@ -198,23 +198,43 @@ export const deleteEvent = async (eventid) => {
 };
 
 export const saveForm = async (formData) => {
-  const formParams = new URLSearchParams();
-  formParams.append("form_name", formData.name);
-  formParams.append("form_data", formData.CustomizedForm);
-
   const token = localStorage.getItem("token"); // Retrieve the token from localStorage
 
   try {
-    const response = await axios.post(`${apiBaseUrl}/create_form/${formData.event_id}`, formParams, {
+    const response = await axios.post(`${apiBaseUrl}/create_form/${formData.event_id}`, 
+      {
+        form_name: formData.name,
+        form_data: JSON.parse(formData.CustomizedForm),  // Parse the JSON string
+      },
+      {
+        headers: {
+          "Content-Type": "application/json", // Use application/json
+          "Authorization": `Bearer ${token}`, // Include the token in the request
+        },
+        withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error creating event:", error);
+    throw error;
+  }
+}
+
+export const getFormsEventById = async (eventId) => {
+  const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+  
+  try {
+    const response = await axios.get(`${apiBaseUrl}/get_forms/${eventId}`, {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "Authorization": `Bearer ${token}`, // Include the token in the request
       },
       withCredentials: true, // Include if you need to send credentials (e.g., cookies)
     });
-    return response.data;
+    return response.data; // Now includes the event id in the response
   } catch (error) {
-    console.error("Error creating event:", error);
+    console.error("Error fetching events:", error);
     throw error;
   }
 };

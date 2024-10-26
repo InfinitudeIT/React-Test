@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../src/Client_forms.css';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { useEventContext } from './EventContext';
+import { getFormsEventById } from '../services/apiService';
 
 const FormsOverview = () => {
   const { selectedEvents } = useEventContext();
-  const formsData = selectedEvents?.eventForms || [];
+  const [formsData, setForms] = React.useState<any[]>([]);
   const navigate = useNavigate();
+
+  const fetchFormsByEventId = async () => {
+    const response = await getFormsEventById(selectedEvents.selectedEvent);
+    if (response) {
+      setForms(response);
+    }
+  };
+
+  // Simulating fetching data from an API
+  useEffect(() => {
+    fetchFormsByEventId();
+  }, []);
 
   const getCreatedForms = async (e?: any) => {
     e.preventDefault(); // Prevent form from refreshing the page
@@ -54,7 +67,7 @@ const FormsOverview = () => {
                       {formsData.map((form: any, index: any) => (
                         <tr key={index}>
                           <td><input type="checkbox" /></td>
-                          <td>{form.Name}</td>
+                          <td>{form.form_name}</td>
                           <td><button className="html-code-button">2</button></td>
                           <td><span className="edit-icon" onClick={editForm}>✏️</span></td>
                         </tr>

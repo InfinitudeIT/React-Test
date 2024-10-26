@@ -8,7 +8,7 @@ import { showToast } from "../Shared/Toaster";
 import { saveForm } from "../services/apiService";
 
 const FormBuilder = () => {
-  const { selectedEvents, setSelectedEvents } = useEventContext(); // Use context
+  const { selectedEvents} = useEventContext(); // Use context
   const location = useLocation();
   const currentRoute = location.pathname.replaceAll('/', '');
   const embedFormData = {
@@ -107,11 +107,9 @@ const FormBuilder = () => {
         showToast(response.message, 'success');
         navigate("/form-overview");
       }
-  } catch (error) {
-    console.error('Error saving event:', error);
-  }
-   
-    navigate('/form-overview');
+    } catch (error) {
+      console.error('Error saving event:', error);
+    }
   };
 
   const getEmbedLink = () => {
