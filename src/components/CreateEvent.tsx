@@ -56,13 +56,27 @@ const EventForm = () => {
   const handleSave = async (e?: any) => {
     e.preventDefault();
     try {
-        const response = !editEventId ? await saveEvent(formData) : await updateEvent(editEventId,formData);
+        const response = await saveEvent(formData);
         if (response?.success) {
           showToast(response.message, 'success');
           navigate("/events");
         }
     } catch (error) {
       console.error('Error saving event:', error);
+    }
+  };
+
+  const handleUpdate = async (e?: any) => {
+    e.preventDefault();
+    try {
+        const response = await updateEvent(editEventId,formData);
+        if (response?.success) {
+          showToast(response.message, 'success');
+          navigate("/events");
+        }
+    } catch (error) {
+      console.error('Error saving event:', error);
+      navigate("/events");
     }
   };
 
@@ -140,7 +154,7 @@ const EventForm = () => {
                 </div>
                 <div className="col-md-12 text-end mt-4">
                   {!editEventId ? (<button type="button" className="btn next-button" onClick={handleSave}>Save</button>)
-                  : (<button type="button" className="btn next-button" onClick={handleSave}>Update</button>)}
+                  : (<button type="button" className="btn next-button" onClick={handleUpdate}>Update</button>)}
                 </div>
                 <div className="col-md-12 text-end mt-4">
                   <button type="button" className="btn next-button" onClick={cancelForm}>Cancel</button>

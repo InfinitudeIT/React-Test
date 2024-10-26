@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEventContext } from "./EventContext";
 import QRCode from "react-qr-code";
+import { showToast } from "../Shared/Toaster";
+import { saveForm } from "../services/apiService";
 
 const FormBuilder = () => {
   const { selectedEvents, setSelectedEvents } = useEventContext(); // Use context
@@ -96,14 +98,19 @@ const FormBuilder = () => {
     setFormSubmit(true);
   }
 
-  const formSave = () => {
+  const formSave = async() => {
     // here call save form api
-    const formObj = { Name: formName, EventId: '1', CustomizedForm: JSON.stringify(formFields) };
-    setSelectedEvents(() => {
-      const formsList = selectedEvents?.eventForms || [];
-      formsList.push(formObj);
-      return { checkedEvents: selectedEvents.checkedEvents, eventForms: formsList };
-    });
+    const formObj = { name: formName, event_id: selectedEvents.selectedEvent, CustomizedForm: JSON.stringify(formFields) };
+    try {
+      const response = await saveForm(formObj);
+      if (response?.success) {
+        showToast(response.message, 'success');
+        navigate("/form-overview");
+      }
+  } catch (error) {
+    console.error('Error saving event:', error);
+  }
+   
     navigate('/form-overview');
   };
 

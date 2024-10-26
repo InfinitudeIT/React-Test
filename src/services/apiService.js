@@ -197,6 +197,28 @@ export const deleteEvent = async (eventid) => {
   }
 };
 
+export const saveForm = async (formData) => {
+  const formParams = new URLSearchParams();
+  formParams.append("form_name", formData.name);
+  formParams.append("form_data", formData.CustomizedForm);
+
+  const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+  try {
+    const response = await axios.post(`${apiBaseUrl}/create_form/${formData.event_id}`, formParams, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": `Bearer ${token}`, // Include the token in the request
+      },
+      withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error creating event:", error);
+    throw error;
+  }
+};
+
 // Generic PUT request
 export const putRequest = async (endpoint, data = {}) => {
     try {

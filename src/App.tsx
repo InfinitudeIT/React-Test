@@ -12,6 +12,7 @@ import FormfieldsClient from "./components/Formfields_client";
 import LunchSelection from "./components/Lunch_client";
 import EmbeddedForm from "./components/EmbeddedForm/EmbeddedForm.js";
 import CreateCustomForm from "./components/AddNew";
+import PrivateRoute from "./Shared/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Dashboard />,
+    element: <PrivateRoute element={<Dashboard />} />,
     children: [
       {
         index: true,

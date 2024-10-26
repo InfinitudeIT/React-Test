@@ -11,11 +11,17 @@ import "../../src/sidebar.css";
 import { useEventContext } from './EventContext'; // Import the context
 
 const Sidebar: React.FC = () => {
-  const { selectedEvents } = useEventContext() || {}; // Use context to get selected events
+  const { selectedEvents, setSelectedEvents } = useEventContext() || {}; // Use context to get selected events
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   const navActiveClass = "nav-link nav-link-active";
   const navInactiveClass = "nav-link nav-link-inactive";
+
+  const selectEvent = (eventId: any) => {
+    setSelectedEvents((prevSelected: any) => {
+       return { checkedEvents: selectedEvents.checkedEvents || [], selectedEvent: eventId};
+    });
+  }
 
   return (
     <div className="">
@@ -46,45 +52,45 @@ const Sidebar: React.FC = () => {
                 <div className="Evnt_list">
                   {selectedEvents?.checkedEvents.map((event: any) => (
                     <ul key={event.id}>
-                      <strong>{event.event_name}</strong>
+                      <strong onClick={() => selectEvent(event.id)}>{event.event_name}</strong>
                       <li>
                         <NavLink to="/events">
-                          <span className="nav-text">Overview</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Overview</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/reg-overview">
-                          <span className="nav-text">Registrations</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Registrations</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-overview">
-                          <span className="nav-text">Forms</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Forms</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-design">
-                          <span className="nav-text">Designs</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Designs</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-lunch">
-                          <span className="nav-text">Lunch/Dinner</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Lunch/Dinner</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-lunch">
-                          <span className="nav-text">Kit</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Kit</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-lunch">
-                          <span className="nav-text">Scanner</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Scanner</span>
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to="/form-lunch">
-                          <span className="nav-text">Event Settings</span>
+                          <span onClick={() => selectEvent(event.id)} className="nav-text">Event Settings</span>
                         </NavLink>
                       </li>
                     </ul>
