@@ -3,7 +3,7 @@ import '../../src/Client_forms.css';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { useEventContext } from './EventContext';
-import { getFormsEventById } from '../services/apiService';
+import { getFormsByEventId } from '../services/apiService';
 
 const FormsOverview = () => {
   const { selectedEvents } = useEventContext();
@@ -11,7 +11,7 @@ const FormsOverview = () => {
   const navigate = useNavigate();
 
   const fetchFormsByEventId = async () => {
-    const response = await getFormsEventById(selectedEvents.selectedEvent);
+    const response = await getFormsByEventId(selectedEvents.selectedEvent);
     if (response) {
       setForms(response);
     }
@@ -22,21 +22,12 @@ const FormsOverview = () => {
     fetchFormsByEventId();
   }, []);
 
-  const getCreatedForms = async (e?: any) => {
-    e.preventDefault(); // Prevent form from refreshing the page
-    try {
-      // const response = await loginUser({ email, password });
-    }
-    catch (error) {
-    }
-  };
-
   const handleCreateEvent = () => {
     navigate('/CreateForm'); // Navigate to the "Create Event" route
   };
 
-  const editForm = () => {
-    navigate('/EditForm', { state: { eventId: '1' } });
+  const editForm = (formId: any) => {
+    navigate('/EditForm/' + formId);
   };
 
 
@@ -69,7 +60,7 @@ const FormsOverview = () => {
                           <td><input type="checkbox" /></td>
                           <td>{form.form_name}</td>
                           <td><button className="html-code-button">2</button></td>
-                          <td><span className="edit-icon" onClick={editForm}>✏️</span></td>
+                          <td><span className="edit-icon" onClick={() => editForm(form.id)}>✏️</span></td>
                         </tr>
                       ))}
                     </tbody>

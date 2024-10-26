@@ -1,17 +1,13 @@
-import { FaReact } from "react-icons/fa6";
-import { HiOutlineMenu } from "react-icons/hi";
-import { useAppDispatch } from "../hooks";
-import { setSidebar } from "../features/dashboard/dashboardSlice";
-import { Link } from "react-router-dom";
-import SearchInput from "./SearchInput";
-import { toggleDarkMode } from "../features/darkMode/darkModeSlice";
-import '../../src/header.css'
+import '../../src/header.css';
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  const dispatch = useAppDispatch();
+  const location = useLocation();
+  const currentRoute = location.pathname.split('/')[1];
+
   return (
-    <div className="app_header">
-        {/* Header */}
+    currentRoute !== 'EventForm' ? (
+      <div className="app_header">
         <div className="header1">
           <div className="dashboardIcon">📋 Dashboards</div>
           <div className="headerRight">
@@ -19,7 +15,11 @@ const Header = () => {
             <div className="notificationButton ms-2">🔔</div>
           </div>
         </div>
-        </div>
+      </div>
+    ) : (
+      <div></div>
+    )
   );
 };
+
 export default Header;

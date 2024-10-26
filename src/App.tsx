@@ -48,11 +48,11 @@ const router = createBrowserRouter([
         element: <CreateCustomForm />,
       },
       {
-        path: "/EditForm",
+        path: "/EditForm/:formId",
         element: <CreateCustomForm />,
       },
       {
-        path: "/EventForm",
+        path: "/EventForm/:formId",
         element: <CreateCustomForm />,
       },
       {

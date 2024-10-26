@@ -2,6 +2,11 @@ import axios from "axios";
 // process.env.REACT_APP_API_BASE_URL || 
 const apiBaseUrl = "http://localhost:8000"; // Load from .env
 
+export const getReactbaseUrl = () => {
+  return "http://localhost:3000";
+}
+
+
 // Generic GET request
 export const getRequest = async (endpoint, params = {}) => {
     try {
@@ -221,7 +226,7 @@ export const saveForm = async (formData) => {
   }
 }
 
-export const getFormsEventById = async (eventId) => {
+export const getFormsByEventId = async (eventId) => {
   const token = localStorage.getItem("token"); // Retrieve the token from localStorage
   
   try {
@@ -238,6 +243,83 @@ export const getFormsEventById = async (eventId) => {
     throw error;
   }
 };
+
+export const getFormById = async (formId) => {
+  const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+  
+  try {
+    const response = await axios.get(`${apiBaseUrl}/form/${formId}`, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": `Bearer ${token}`, // Include the token in the request
+      },
+      withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+    });
+    return response.data; // Now includes the event id in the response
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    throw error;
+  }
+};
+
+export const updateForm = async (formId, formData) => {
+  const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+  try {
+    const response = await axios.put(`${apiBaseUrl}/update_form/${formId}`, 
+      {
+        form_name: formData.name,
+        form_data: JSON.parse(formData.CustomizedForm),  // Parse the JSON string
+      },
+      {
+        headers: {
+          "Content-Type": "application/json", // Use application/json
+          "Authorization": `Bearer ${token}`, // Include the token in the request
+        },
+        withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error creating event:", error);
+    throw error;
+  }
+};
+
+export const getEmbedForm = async (formId) => {
+  try {
+    const response = await axios.get(`${apiBaseUrl}/embed_form/${formId}`, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+    });
+    return response.data; // Now includes the event id in the response
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    throw error;
+  }
+};
+
+export const registerForm = async (formId, formData) => {
+  try {
+    const response = await axios.post(`${apiBaseUrl}/submit_form/${formId}`, 
+      {
+        submission_data: formData.submission_data,  // Parse the JSON string
+      },
+      {
+        headers: {
+          "Content-Type": "application/json", // Use application/json
+        },
+        withCredentials: true, // Include if you need to send credentials (e.g., cookies)
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error creating event:", error);
+    throw error;
+  }
+}
 
 // Generic PUT request
 export const putRequest = async (endpoint, data = {}) => {
